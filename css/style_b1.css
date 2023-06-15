@@ -1,0 +1,270 @@
+:root {
+    /* 변수를 쓰는 방법 */
+    --mc: #09847F;
+    --sc: #B4613D;
+    --lc: #dddddd;
+    --wc: #ffffff;
+    --dc: #000000;
+}
+
+.inner {
+    max-width: 1440rem;
+    padding: 0 15rem;
+    margin: 0 auto;
+}
+
+
+
+/* 
+────────── 세팅△
+▽스타일 ──────────
+*/
+
+
+
+.wrap {}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 999;
+}
+
+.header .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120rem;
+    transition: height .5s;
+}
+
+.header.on {
+    background: var(--wc);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+
+.header.on .header_wrap {
+    height: 80rem;
+}
+
+.header h1 {
+    font-size: 0;
+}
+
+.header h1 img {
+    height: 39rem;
+}
+
+.header.on h1 img:last-child {
+    filter: invert();
+}
+
+.gnb {}
+
+.gnb .main_menu {
+    display: flex;
+}
+
+.gnb .main_menu>li {
+    position: relative;
+    padding: 0 30rem;
+}
+
+.header .gnb .main_menu a {
+    display: block;
+    color: var(--wc);
+    font-size: 18rem;
+    line-height: 120rem;
+}
+
+.header.on .gnb .main_menu a {
+    color: var(--dc);
+}
+
+.gnb .sub_menu {
+    position: absolute;
+    top: 130rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: var(--wc);
+
+    width: 180rem;
+    text-align: center;
+    padding: 15rem 0;
+    border-radius: 10rem;
+    border: 2px solid var(--lc);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.gnb .main_menu>li:hover .sub_menu {
+    opacity: 1;
+    visibility: visible;
+    top: 100rem;
+}
+
+.header.on .gnb .main_menu>li:hover .sub_menu {
+    top: 90rem;
+}
+
+.gnb .sub_menu li~li {
+    border-top: 1px solid var(--lc);
+}
+
+.header .gnb .sub_menu a {
+    display: block;
+    color: var(--dc);
+    font-size: 15rem;
+    line-height: 40rem;
+}
+
+
+
+
+.login_area .member {
+    display: flex;
+    gap: 30rem;
+}
+
+.header .login_area .member li {
+    position: relative;
+}
+
+.login_area .member li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15rem;
+    transform: translate(0, -50%);
+    width: 2px;
+    height: 2px;
+    background: var(--lc);
+}
+
+.header .login_area .member a {
+    color: var(--wc);
+    font-size: 15rem;
+}
+
+.header.on .login_area .member a {
+    color: var(--dc);
+}
+
+.header.on .login_area .member li~li::before {
+    background: var(--dc);
+}
+
+
+
+
+
+.main_visual {
+    position: relative;
+    height: 100vh;
+}
+
+.main_visual .main_slide {}
+
+.main_slide .itm {
+    font-size: 100rem;
+    transition: 1s;
+}
+
+.main_slide .itm.on {
+    font-size: 400rem;
+}
+
+.main_visual .main_slide .itm01 {
+    height: 100vh;
+    background: url(../images/img_visual01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_slide .itm02 {
+    height: 100vh;
+    background: url(../images/img_visual02.jpg) no-repeat center center/cover;
+}
+
+.main_visual .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    max-width: 1600rem;
+    width: 100%;
+}
+
+.main_visual .arrows i {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.main_visual .arrows .left {
+    left: 15rem;
+}
+
+.main_visual .arrows .right {
+    right: 15rem;
+}
+
+.main_visual .arrows i::before {
+    font-size: 40rem;
+    color: var(--wc);
+    padding: 30rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.main_visual .slide_dots li.on button {
+    font-size: 100rem;
+}
+
+
+.circle {
+    position: absolute;
+    top: 500px;
+    right: 500px;
+    width: 500px;
+    height: 500px;
+    background: tomato;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.circle span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 250px;
+    width: 3px;
+    background: #fff;
+}
+
+.circle span:nth-child(1) {
+    transform: translate(-50%, 0) rotate(0deg);
+    transform-origin: center bottom;
+}
+
+.circle span::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50px;
+    height: 50px;
+    background: #09847F;
+    border-radius: 50%;
+}
+
+.footer {
+    height: 100rem;
+}
