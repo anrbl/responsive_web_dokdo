@@ -5,8 +5,17 @@ $(function () {
             ? $('.header').addClass('on')
             : $('.header').removeClass('on')
     });
-
-
+    //스크롤반응.on붙이기
+    $(window).on('scroll', function () {
+        let sct = $(window).scrollTop();
+        $('._se_').each(function () {
+            if (sct + $(window).innerHeight() - 200 > $(this).offset().top) {
+                $(this).addClass('on')
+            } else {
+                $(this).removeClass('on')
+            }
+        });
+    });
     const mainSlide = new Swiper('.main_slide', {
         parallax: true,
         loop: true,
@@ -26,4 +35,19 @@ $(function () {
     $('.main_visual .arrows .left').on('click', function () {
         mainSlide.slidePrev();
     });
+
+
+    const noticeSlide = new Swiper('.notice_slide', {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+    });
+    $('.main_notice .arrows .right').on('click', function () {
+        noticeSlide.slideNext();
+    });
+    $('.main_notice .arrows .left').on('click', function () {
+        noticeSlide.slidePrev();
+    });
+
+
 });
