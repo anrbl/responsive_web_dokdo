@@ -145,8 +145,10 @@ header,
 hgroup,
 menu,
 nav,
-section {
+section,
+address {
     display: block;
+    box-sizing: border-box;
 }
 
 figure {

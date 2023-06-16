@@ -510,9 +510,7 @@
 
 
 /* 03 main_notice */
-.main_notice {
-    padding: 0 0 100rem 0;
-}
+
 
 .main_notice .content {
     transform: translate(0, 100rem);
@@ -560,8 +558,21 @@
     object-fit: cover;
 }
 
-.main_notice .right {
-    overflow: hidden;
+.main_notice .right_slide {
+    position: relative;
+    /* overflow: hidden; */
+    min-width: 0;
+}
+
+.main_notice .right_slide::before {
+    content: "";
+    position: absolute;
+    top: -50rem;
+    left: -50rem;
+    width: 100rem;
+    height: 100rem;
+    outline: 50rem solid var(--mc);
+    border-radius: 50%;
 }
 
 .main_notice .card {
@@ -582,10 +593,195 @@
     font-size: 20px;
 }
 
+/* 메인 배너 */
+.main_banner .content {
+    position: relative;
+    z-index: 998;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30rem;
+    background: var(--mc);
+    color: var(--wc);
+    margin: 0 auto -80rem auto;
+    border-radius: 50rem;
+    box-shadow: 10rem 10rem 20rem rgba(0, 0, 0, 0.2);
+
+    transform: translate(0, 100rem);
+    transition: .5s;
+}
+
+.main_banner.on .content {
+    transform: translate(0, 0);
+}
+
+.main_banner .content a {
+    display: block;
+    padding: 60rem 80rem;
+}
+
+.main_banner .content h3 {
+    font-size: 30rem;
+    font-weight: 500;
+    margin: 0 0 17rem 0;
+}
+
+.main_banner .content p {
+    font-size: 15rem;
+    line-height: 21rem;
+}
+
+.main_banner .content li {
+    position: relative;
+}
+
+.main_banner .content li a::after {
+    content: "";
+    position: absolute;
+    right: 80rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100rem;
+    height: 100rem;
+    background: url(../images/icon_experience.svg) no-repeat center center;
+}
+
+.main_banner .content li:last-child a::after {
+    background: url(../images/icon_theater.svg) no-repeat center center;
+}
+
+.main_banner .content li~li::before {
+    content: "";
+    position: absolute;
+    left: -15rem;
+    top: 30rem;
+    bottom: 30rem;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
 
 
 
 
-.footer {
-    height: 100vh;
+
+/* footer */
+.footer .ft {
+    position: relative;
+    border-radius: 180rem 0 0 0;
+    overflow: hidden;
+    background: #434250 url(../images/bg_banner.jpg) no-repeat center bottom;
+    padding: 200rem 0 300rem 0;
+}
+
+.footer .ft .content {
+    text-align: center;
+
+}
+
+.footer .ft .content .img_box {
+    width: 200rem;
+    margin: 0 auto 50rem auto;
+}
+
+.footer .ft .content .txt {
+    position: relative;
+    font-size: 30rem;
+    font-weight: 500;
+    font-family: 'Noto Serif KR';
+    color: var(--gc);
+}
+
+.footer .ft .content .txt span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #777;
+}
+
+.footer .ft .content .txt span::after {
+    content: "“ 경상북도 울릉읍 독도리 1-96 ”";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--wc);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    animation: typing 5s infinite steps(25, end);
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+.footer .ft .dots span {
+    position: absolute;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: var(--gc);
+    border-radius: 50%;
+}
+
+.footer .ft .dots span::after {}
+
+.footer .ft .dots span:nth-child(1) {
+    bottom: 310rem;
+    margin: 0 0 0 -310rem;
+}
+
+.footer .ft .dots span:nth-child(2) {
+    bottom: 200rem;
+    margin: 0 0 0 160rem;
+}
+
+
+.footer .fb {
+    padding: 50rem 0 100rem 0;
+    background: #393846;
+    color: var(--gc);
+    font-size: 15rem;
+    font-weight: 300;
+}
+
+.footer .fb .customer {
+    display: flex;
+    gap: 40rem;
+    margin: 0 0 10rem 0;
+}
+
+.footer .fb .customer>* {
+    position: relative;
+}
+
+.footer .fb .customer li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20rem;
+    transform: translate(0, -50%);
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: var(--lc);
+}
+
+.footer .fb .address {
+    margin: 0 0 30rem 0;
+}
+
+.footer .fb .copyright {
+    font-size: 12rem;
+    color: var(--lc);
 }
