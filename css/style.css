@@ -1432,7 +1432,8 @@
     .main_content .content .right .desc {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center;        
+        flex-wrap: wrap;
         margin: 0 0 30rem 0;
         padding: 0 0 15rem 0;
         border-bottom: 1px dashed var(--lc);
