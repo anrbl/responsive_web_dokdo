@@ -592,9 +592,6 @@
 
 
 /* 03 main_notice */
-.main_notice {
-    padding: 80rem 0 0;    
-}
 
 .main_notice .content {
     transform: translate(0, 100rem);
@@ -1478,6 +1475,9 @@
 
     /* 03 main_notice */
 
+    .main_notice {
+      padding: 80rem 0 0;    
+    }
 
     .main_notice .content {
         transform: translate(0, 100rem);
